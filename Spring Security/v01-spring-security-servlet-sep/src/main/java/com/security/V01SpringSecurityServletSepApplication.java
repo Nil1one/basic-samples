@@ -8,5 +8,4 @@ public class V01SpringSecurityServletSepApplication {
     public static void main(String[] args) {
         SpringApplication.run(V01SpringSecurityServletSepApplication.class, args);
     }
-
 }

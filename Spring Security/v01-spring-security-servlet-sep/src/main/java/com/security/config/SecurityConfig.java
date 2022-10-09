@@ -16,8 +16,8 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChainForV1(HttpSecurity http) throws Exception {
-        // 注意: 角色配置时不需要添加`ROLE_`前缀，因为会自动补全
         daoAuthenticationProvider.setUserDetailsService((username)-> User.withUsername(username).password("{noop}123").roles("V1").build());
+        // 注意: 角色配置时不需要添加`ROLE_`前缀，因为会自动补全
         return http
                 .csrf().disable()
                 .antMatcher("/v1/**")
@@ -32,8 +32,8 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChainForAdmin(HttpSecurity http) throws Exception {
-        // 注意: 角色配置时不需要添加`ROLE_`前缀，因为会自动补全
         daoAuthenticationProvider.setUserDetailsService((username)-> User.withUsername(username).password("{noop}123").roles("ADMIN").build());
+        // 注意: 角色配置时不需要添加`ROLE_`前缀，因为会自动补全
         return http
                 .csrf().disable()
                 .antMatcher("/admin/**")
