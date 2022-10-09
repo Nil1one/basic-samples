@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/v1")
-public class HomeController {
+public class V1HomeController {
     @PostMapping("/home")
     public R<String> home(){
         SecurityContext context = SecurityContextHolder.getContext();
